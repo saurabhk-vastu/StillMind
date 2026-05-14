@@ -167,15 +167,24 @@ function Onboarding() {
 
 function TopBar({ progress, onBack, canBack = true }: { progress: number; onBack: () => void; canBack?: boolean }) {
   return (
-    <div className="px-6 pt-8 max-w-[760px] w-full mx-auto">
+    <div className="px-6 pt-7 max-w-[720px] w-full mx-auto">
       <div className="flex items-center gap-4">
-        <button onClick={onBack} disabled={!canBack} className="w-10 h-10 rounded-full flex items-center justify-center text-[#4B4B4B] hover:bg-[#ECECEC] transition disabled:opacity-30">
-          <ArrowLeft size={20} />
+        <button onClick={onBack} disabled={!canBack} className="w-9 h-9 rounded-full flex items-center justify-center text-[#4B4B4B] hover:bg-[#ECECEC] transition disabled:opacity-30">
+          <ArrowLeft size={18} />
         </button>
-        <div className="flex-1 h-[6px] rounded-full bg-[#DADADA] overflow-hidden">
-          <div className="h-full transition-all duration-700 ease-out" style={{ width: `${progress}%`, background: "var(--gradient-progress)" }} />
+        <div className="flex-1 h-[8px] rounded-full bg-[#E4E4DF] overflow-hidden relative">
+          <div
+            className="h-full rounded-full transition-[width] duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+            style={{
+              width: `${progress}%`,
+              background: "linear-gradient(90deg, #7FA38D 0%, #9CC4D9 60%, #B8A88A 100%)",
+              backgroundSize: "200% 100%",
+              animation: "gradient-pan 8s ease-in-out infinite",
+              boxShadow: "0 0 16px rgba(127,163,141,0.35)",
+            }}
+          />
         </div>
-        <span className="text-sm font-semibold text-[#6B7280]">{Math.round(progress)}%</span>
+        <span className="text-[12px] font-medium text-[#9A9A94] tabular-nums w-9 text-right">{Math.round(progress)}%</span>
       </div>
     </div>
   );
