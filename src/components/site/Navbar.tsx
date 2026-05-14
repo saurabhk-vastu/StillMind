@@ -24,7 +24,7 @@ export function Navbar({ accent = "var(--deep-green)" }: { accent?: string }) {
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled ? "glass-nav border-b border-[var(--divider)]" : "bg-transparent"
       }`}
-      style={{ height: 96 }}
+      style={{ height: scrolled ? 72 : 84 }}
     >
       <div className="container-wellness h-full flex items-center justify-between gap-8">
         <Link to="/" className="flex items-center gap-2">
