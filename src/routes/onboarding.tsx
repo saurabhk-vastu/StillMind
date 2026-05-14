@@ -146,16 +146,16 @@ function Onboarding() {
             })}
           </div>
 
-          <div className="mt-14 flex flex-col items-center gap-4">
+          <div className="mt-10 md:mt-12 flex flex-col items-center gap-3.5">
             <button
               onClick={advance}
               disabled={selected === null}
-              className="btn-cta disabled:!bg-[#D9D9D9] disabled:!shadow-none disabled:cursor-not-allowed disabled:hover:!translate-y-0 disabled:hover:!filter-none"
-              style={selected === null ? { background: "#D9D9D9", boxShadow: "none" } : undefined}
+              className="btn-cta btn-cta-glow disabled:!bg-[#D9D9D9] disabled:!shadow-none disabled:cursor-not-allowed disabled:hover:!translate-y-0 disabled:hover:!filter-none"
+              style={selected === null ? { background: "#D9D9D9", boxShadow: "none", animation: "none" } : undefined}
             >
               {step === total - 1 ? "Finish" : "Continue"}
             </button>
-            <button onClick={advance} className="text-[#4B4B4B] text-sm hover:text-[var(--deep-green)] transition-colors">
+            <button onClick={advance} className="text-[#6B7280] text-[13.5px] hover:text-[var(--deep-green)] transition-colors underline-offset-4 hover:underline">
               Skip for now
             </button>
           </div>
