@@ -38,6 +38,7 @@
 
   --animate-fade-up: fade-up 0.7s ease-out both;
   --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-step-in: step-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-breathe: breathe 6s ease-in-out infinite;
   --animate-float: float 8s ease-in-out infinite;
 }
