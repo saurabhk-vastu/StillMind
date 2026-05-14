@@ -17,7 +17,7 @@ function SignIn() {
 
     console.log("User:", result.user);
 
-    alert("Login successful!");
+    window.location.href = "/dashboard";
   } catch (error) {
     console.error(error);
     alert("Google sign in failed");
