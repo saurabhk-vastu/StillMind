@@ -36,22 +36,23 @@ export function Navbar({ accent = "var(--deep-green)" }: { accent?: string }) {
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-9">
+        <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => {
             const active = location.pathname === l.to;
             return (
               <Link
                 key={l.to}
                 to={l.to}
-                className="relative text-[17px] font-semibold transition-colors duration-300"
+                className="relative text-[15.5px] font-semibold transition-colors duration-300 hover:opacity-80"
                 style={{ color: active ? accent : "#2C2C2C" }}
               >
                 {l.label}
                 <span
-                  className="absolute -bottom-2 left-0 h-[2px] transition-all duration-500"
+                  className="absolute -bottom-2 left-0 h-[2px] rounded-full transition-all duration-[600ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{
                     width: active ? "100%" : "0%",
                     background: accent,
+                    opacity: active ? 1 : 0,
                   }}
                 />
               </Link>
