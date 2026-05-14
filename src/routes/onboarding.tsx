@@ -80,35 +80,48 @@ function Onboarding() {
     <div className="min-h-screen bg-[var(--background)] flex flex-col">
       <TopBar progress={progress} onBack={back} canBack={step > 0} />
       <div className="flex-1 flex items-center">
-        <div className="max-w-[760px] w-full mx-auto px-6 py-16 animate-[fade-in_0.6s_ease-out]">
-          <p className="text-[15px] font-medium text-[#6B7280]">Question {step + 1} of {total}</p>
-          <h1 className="mt-6 text-[40px] md:text-[58px] font-bold leading-[1.15] tracking-tight" style={{ color: "#2C2C2C" }}>
+        <div key={step} className="max-w-[720px] w-full mx-auto px-6 py-14 md:py-16 animate-step-in">
+          <p className="text-[14px] tracking-wide uppercase font-semibold text-[#7FA38D]">Question {step + 1} of {total}</p>
+          <h1 className="mt-5 text-[32px] md:text-[44px] font-semibold leading-[1.18] tracking-tight" style={{ color: "#2C2C2C" }}>
             {s.q}
           </h1>
-          <p className="text-paragraph mt-5 max-w-xl">{s.sub}</p>
+          <p className="mt-4 text-[17px] md:text-[19px] leading-[1.6] text-[#5B5B5B] max-w-xl">{s.sub}</p>
 
-          <div className="mt-12 space-y-4">
+          <div className="mt-10 md:mt-12 space-y-3.5" role="radiogroup" aria-label={s.q}>
             {s.options.map((o, i) => {
               const active = selected === i;
               return (
                 <button
                   key={o}
                   onClick={() => select(i)}
-                  className="relative w-full text-left rounded-[18px] p-[1.5px] transition-all duration-300 hover:-translate-y-0.5"
+                  role="radio"
+                  aria-checked={active}
+                  className="group relative w-full text-left rounded-[18px] transition-all duration-400 ease-out focus:outline-none"
                   style={{
-                    background: active ? "var(--gradient-select-border)" : "transparent",
+                    background: "#FFFFFF",
+                    border: active ? "1.5px solid transparent" : "1.5px solid #E4E4DF",
+                    backgroundImage: active
+                      ? "linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(90deg, #7FA38D 0%, #9CC4D9 100%)"
+                      : undefined,
+                    backgroundOrigin: active ? "border-box" : undefined,
+                    backgroundClip: active ? "padding-box, border-box" : undefined,
+                    boxShadow: active
+                      ? "0 14px 38px rgba(127,163,141,0.18), 0 2px 6px rgba(59,130,246,0.06)"
+                      : "0 1px 2px rgba(0,0,0,0.02)",
+                    transform: active ? "translateY(-1px)" : "none",
                   }}
                 >
-                  <div
-                    className="rounded-[16px] px-6 py-5 text-[19px] font-semibold transition-all duration-300"
-                    style={{
-                      background: active ? "linear-gradient(90deg, #2C7A5C 0%, #3B82F6 100%)" : "#fff",
-                      color: active ? "#fff" : "#2C2C2C",
-                      border: active ? "none" : "1.5px solid #D7D7D7",
-                      boxShadow: active ? "0 10px 30px rgba(59,130,246,0.18)" : "none",
-                    }}
-                  >
-                    {o}
+                  <div className="flex items-center justify-between rounded-[16px] px-6 py-5 text-[17px] md:text-[18px] font-medium" style={{ color: "#2C2C2C" }}>
+                    <span>{o}</span>
+                    <span
+                      className="w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300"
+                      style={{
+                        border: active ? "none" : "1.5px solid #D7D7D7",
+                        background: active ? "linear-gradient(135deg, #2F7D57, #3B82F6)" : "transparent",
+                      }}
+                    >
+                      {active && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                    </span>
                   </div>
                 </button>
               );
