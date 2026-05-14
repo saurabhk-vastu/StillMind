@@ -114,19 +114,19 @@ function Onboarding() {
                   onClick={() => select(i)}
                   role="radio"
                   aria-checked={active}
-                  className="group relative w-full text-left rounded-[18px] transition-all duration-400 ease-out focus:outline-none"
+                  className="group relative w-full text-left rounded-[18px] transition-all duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] focus:outline-none hover:-translate-y-[2px]"
                   style={{
                     background: "#FFFFFF",
-                    border: active ? "1.5px solid transparent" : "1.5px solid #E4E4DF",
+                    border: active ? "1.5px solid transparent" : "1.5px solid #E8E8E2",
                     backgroundImage: active
-                      ? "linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(90deg, #7FA38D 0%, #9CC4D9 100%)"
+                      ? "linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(120deg, #7FA38D 0%, #9CC4D9 60%, #B8A88A 100%)"
                       : undefined,
                     backgroundOrigin: active ? "border-box" : undefined,
                     backgroundClip: active ? "padding-box, border-box" : undefined,
                     boxShadow: active
-                      ? "0 14px 38px rgba(127,163,141,0.18), 0 2px 6px rgba(59,130,246,0.06)"
+                      ? "0 18px 44px -14px rgba(127,163,141,0.45), 0 4px 12px rgba(59,130,246,0.08), 0 0 0 6px rgba(127,163,141,0.06)"
                       : "0 1px 2px rgba(0,0,0,0.02)",
-                    transform: active ? "translateY(-1px)" : "none",
+                    transform: active ? "translateY(-2px)" : "none",
                   }}
                 >
                   <div className="flex items-center justify-between rounded-[16px] px-6 py-5 text-[17px] md:text-[18px] font-medium" style={{ color: "#2C2C2C" }}>
