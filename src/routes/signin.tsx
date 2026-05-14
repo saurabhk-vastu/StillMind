@@ -10,46 +10,47 @@ function SignIn() {
   const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");
   return (
-    <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-6 bg-[var(--background)]">
+    <div className="min-h-screen relative overflow-hidden flex items-center justify-center px-5 py-10 bg-[var(--background)]">
       {/* Soft glow background */}
-      <div className="pointer-events-none absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full blur-[120px] opacity-40" style={{ background: "radial-gradient(circle, #7FA38D, transparent 70%)" }} />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 w-[520px] h-[520px] rounded-full blur-[120px] opacity-40" style={{ background: "radial-gradient(circle, #3B82F6, transparent 70%)" }} />
+      <div className="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full blur-[130px] opacity-50 animate-[float_14s_ease-in-out_infinite]" style={{ background: "radial-gradient(circle, #7FA38D, transparent 70%)" }} />
+      <div className="pointer-events-none absolute -bottom-40 -right-40 w-[560px] h-[560px] rounded-full blur-[130px] opacity-40 animate-[float_18s_ease-in-out_infinite]" style={{ background: "radial-gradient(circle, #3B82F6, transparent 70%)" }} />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
 
-      <div className="relative w-full max-w-[520px] animate-[fade-in_0.6s_ease-out]">
-        <div className="text-center mb-8">
-          <Link to="/" className="text-2xl font-bold inline-block" style={{ background: "var(--gradient-primary)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+      <div className="relative w-full max-w-[460px] animate-[fade-in_0.7s_ease-out]">
+        <div className="text-center mb-7">
+          <Link to="/" className="text-[22px] font-bold inline-block tracking-tight" style={{ background: "var(--gradient-primary)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
             Stillwave
           </Link>
         </div>
-        <div className="bg-white rounded-[32px] p-12 shadow-[0_10px_40px_rgba(0,0,0,0.06)]">
-          <h1 className="text-[30px] md:text-[36px] font-semibold leading-[1.2] tracking-tight" style={{ color: "#2C2C2C" }}>Welcome back.</h1>
-          <p className="mt-3 text-[16px] text-[#5B5B5B]">Continue your wellness journey.</p>
+        <div className="glass-card rounded-[28px] p-9 md:p-10">
+          <h1 className="text-[26px] md:text-[30px] font-semibold leading-[1.2] tracking-tight" style={{ color: "#2C2C2C" }}>Welcome back.</h1>
+          <p className="mt-2 text-[15px] text-[#5B5B5B]">Continue your wellness journey.</p>
 
-          <form className="mt-10 space-y-5" onSubmit={(e) => e.preventDefault()}>
+          <form className="mt-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
             <div>
-              <label className="text-[15px] font-medium text-[#5B5B5B] mb-2 block">Email</label>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="you@calm.com" className="w-full h-[60px] rounded-[18px] border-[1.5px] border-[#D7D7D7] bg-white px-5 text-[17px] text-[#2C2C2C] focus:outline-none focus:border-[#3B82F6] focus:ring-4 focus:ring-[rgba(59,130,246,0.08)] transition-all" />
+              <label className="text-[13.5px] font-medium text-[#6B6B6B] mb-1.5 block">Email</label>
+              <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="you@calm.com" className="w-full h-[54px] rounded-[16px] border-[1.5px] border-[#E2E2DD] bg-white/80 px-5 text-[16px] text-[#2C2C2C] placeholder:text-[#A8A8A2] focus:outline-none focus:border-[#7FA38D] focus:bg-white focus:ring-4 focus:ring-[rgba(127,163,141,0.12)] transition-all duration-300" />
             </div>
             <div>
-              <label className="text-[15px] font-medium text-[#5B5B5B] mb-2 block">Password</label>
-              <input value={pw} onChange={(e) => setPw(e.target.value)} type="password" placeholder="••••••••" className="w-full h-[60px] rounded-[18px] border-[1.5px] border-[#D7D7D7] bg-white px-5 text-[17px] text-[#2C2C2C] focus:outline-none focus:border-[#3B82F6] focus:ring-4 focus:ring-[rgba(59,130,246,0.08)] transition-all" />
+              <label className="text-[13.5px] font-medium text-[#6B6B6B] mb-1.5 block">Password</label>
+              <input value={pw} onChange={(e) => setPw(e.target.value)} type="password" placeholder="••••••••" className="w-full h-[54px] rounded-[16px] border-[1.5px] border-[#E2E2DD] bg-white/80 px-5 text-[16px] text-[#2C2C2C] placeholder:text-[#A8A8A2] focus:outline-none focus:border-[#7FA38D] focus:bg-white focus:ring-4 focus:ring-[rgba(127,163,141,0.12)] transition-all duration-300" />
             </div>
-            <button type="submit" className="btn-cta w-full !h-[60px] !py-0">Sign in</button>
+            <button type="submit" className="btn-cta btn-cta-glow w-full !h-[54px] !py-0 !text-[16px] mt-2">Sign in</button>
           </form>
 
-          <div className="my-8 flex items-center gap-4">
-            <div className="flex-1 h-px bg-[#E2E2E2]" />
-            <span className="text-sm text-[#6B7280]">or continue with</span>
-            <div className="flex-1 h-px bg-[#E2E2E2]" />
+          <div className="my-7 flex items-center gap-4">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#D7D7D2] to-transparent" />
+            <span className="text-[12.5px] uppercase tracking-[0.18em] text-[#9A9A94]">or</span>
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#D7D7D2] to-transparent" />
           </div>
 
-          <button className="w-full h-[60px] rounded-full border-[1.5px] border-[#D7D7D7] bg-white flex items-center justify-center gap-3 text-[17px] font-semibold text-[#2C2C2C] hover:shadow-md hover:-translate-y-0.5 transition-all">
+          <button className="w-full h-[54px] rounded-[16px] border-[1.5px] border-[#E2E2DD] bg-white/70 hover:bg-white flex items-center justify-center gap-3 text-[15.5px] font-semibold text-[#2C2C2C] hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
             <GoogleIcon /> Continue with Google
           </button>
 
-          <div className="mt-8 flex items-center justify-between text-[15px]">
-            <Link to="/" className="text-[#2F7D57] hover:underline">Forgot password?</Link>
-            <span className="text-[#6B7280]">New here? <Link to="/onboarding" className="text-[#2F7D57] font-semibold hover:underline">Sign up</Link></span>
+          <div className="mt-7 flex items-center justify-between text-[14px]">
+            <Link to="/" className="text-[#2F7D57] hover:underline underline-offset-4">Forgot password?</Link>
+            <span className="text-[#6B7280]">New here? <Link to="/onboarding" className="text-[#2F7D57] font-semibold hover:underline underline-offset-4">Sign up</Link></span>
           </div>
         </div>
       </div>
