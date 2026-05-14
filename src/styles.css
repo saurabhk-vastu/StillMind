@@ -41,6 +41,8 @@
   --animate-step-in: step-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-breathe: breathe 6s ease-in-out infinite;
   --animate-float: float 8s ease-in-out infinite;
+  --animate-gradient-pan: gradient-pan 14s ease-in-out infinite;
+  --animate-parallax-rise: parallax-rise 1.4s cubic-bezier(0.22,1,0.36,1) both;
 }
 
 :root {
