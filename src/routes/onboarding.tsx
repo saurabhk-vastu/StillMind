@@ -38,6 +38,18 @@ function Onboarding() {
   };
   const back = () => { if (step > 0) setStep(step - 1); };
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (done) return;
+      if (e.key === "Enter" && answers[step] !== null) { e.preventDefault(); advance(); }
+      if (e.key === "Backspace" && (e.metaKey || e.altKey)) { e.preventDefault(); back(); }
+      const n = parseInt(e.key, 10);
+      if (!isNaN(n) && n >= 1 && n <= steps[step].options.length) select(n - 1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [step, answers, done]);
+
   if (done) {
     return (
       <div className="min-h-screen bg-[var(--background)] flex flex-col">
