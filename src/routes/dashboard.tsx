@@ -10,11 +10,11 @@ export const Route = createFileRoute("/dashboard")({
   component: Dashboard,
 });
 
-function Dashboard() {
+function Dashboard() { 
   return (
     <div className="min-h-screen bg-[#091B44] text-white flex overflow-hidden">
       <DashboardSidebar />
-
+      // This is the main content area with a fixed background image and an overlay for better readability of the content on top.
       <main
       
         className="flex-1 overflow-y-auto relative"
