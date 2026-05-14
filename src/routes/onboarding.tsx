@@ -57,7 +57,7 @@ function Onboarding() {
         <div className="flex-1 flex items-center">
           <div className="max-w-[760px] w-full mx-auto px-6 py-20 text-center">
             <div className="w-32 h-32 mx-auto rounded-full mb-10 animate-[breathe_6s_ease-in-out_infinite]" style={{ background: "var(--gradient-primary)", boxShadow: "0 30px 80px rgba(59,130,246,0.3)" }} />
-            <h1 className="text-[44px] md:text-[58px] font-bold leading-[1.15] tracking-tight" style={{ color: "#2C2C2C" }}>
+            <h1 className="text-[36px] md:text-[48px] font-semibold leading-[1.18] tracking-tight" style={{ color: "#2C2C2C" }}>
               Your gentle path is ready.
             </h1>
             <p className="text-paragraph mt-6 max-w-xl mx-auto">
