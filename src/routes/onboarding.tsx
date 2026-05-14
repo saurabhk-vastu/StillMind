@@ -129,7 +129,7 @@ function Onboarding() {
                     transform: active ? "translateY(-2px)" : "none",
                   }}
                 >
-                  <div className="flex items-center justify-between rounded-[16px] px-6 py-5 text-[17px] md:text-[18px] font-medium" style={{ color: "#2C2C2C" }}>
+                  <div className="flex items-center justify-between rounded-[16px] px-6 py-[18px] text-[16px] md:text-[17px] font-medium" style={{ color: "#2C2C2C" }}>
                     <span>{o}</span>
                     <span
                       className="w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300"
