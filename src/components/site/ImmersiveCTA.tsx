@@ -22,17 +22,18 @@ export function ImmersiveCTA({
         src={bgImage ?? forest}
         alt=""
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover scale-[1.04] animate-[float_18s_ease-in-out_infinite]"
       />
-      <div className="absolute inset-0" style={{ background: overlay }} />
-      <div className="relative container-wellness py-32 md:py-44 text-center text-white">
+      <div className="absolute inset-0" style={{ background: overlay, backgroundSize: "200% 200%", animation: "gradient-pan 18s ease-in-out infinite" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.25) 100%)" }} />
+      <div className="relative container-wellness py-28 md:py-40 text-center text-white">
         <h2 className="heading-section max-w-3xl mx-auto" style={{ color: "#fff" }}>
           {title}
         </h2>
-        <p className="mt-6 text-paragraph max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
+        <p className="mt-6 max-w-2xl mx-auto text-[17px] md:text-[19px] leading-[1.75]" style={{ color: "rgba(255,255,255,0.9)" }}>
           {subtitle}
         </p>
-        <Link to={to} className="btn-cta mt-12 inline-flex" style={{ boxShadow: "0 0 60px rgba(110,231,231,0.35), 0 14px 40px rgba(59,130,246,0.45)" }}>
+        <Link to={to} className="btn-cta btn-cta-glow mt-12 inline-flex" style={{ boxShadow: "0 0 70px rgba(110,231,231,0.35), 0 14px 40px rgba(59,130,246,0.45)" }}>
           {cta}
         </Link>
       </div>
