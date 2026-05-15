@@ -1,26 +1,58 @@
-import { Search, Bell } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function DashboardTopbar() {
+
   return (
-    <div className="w-full flex items-center justify-end px-10 py-7">
-      <div className="flex items-center gap-5">
-        <button className="h-14 w-14 rounded-full bg-white/10 backdrop-blur-xl flex items-center justify-center hover:bg-white/20 transition-all">
-          <Search className="text-white" size={22} />
-        </button>
+    <div className="relative z-20 w-full h-[120px]  backdrop-blur-md px-10 flex items-center justify-end">
 
-        <button className="h-14 w-14 rounded-full bg-white/10 backdrop-blur-xl flex items-center justify-center hover:bg-white/20 transition-all">
-          <Bell className="text-white" size={22} />
-        </button>
+      {/* RIGHT ACTIONS */}
+      <div className="flex items-center gap-6">
 
-        <div className="h-10 w-[1px] bg-white/20 mx-2" />
-
-        <button className="px-8 h-14 rounded-full bg-white/10 text-white text-lg font-medium backdrop-blur-xl hover:bg-white/20 transition-all">
+        {/* USE MOBILE APP */}
+        <Link
+          to="/mobile-app"
+          className="
+            h-[58px]
+            px-10
+            rounded-full
+            bg-white/10
+            backdrop-blur-xl
+            text-white
+            text-[18px]
+            font-[500]
+            flex
+            items-center
+            justify-center
+            hover:bg-white/15
+            transition-all
+            duration-300
+          "
+        >
           Use Mobile App
-        </button>
+        </Link>
 
-        <button className="px-8 h-14 rounded-full bg-white text-[#091B44] text-lg font-semibold hover:scale-[1.02] transition-all">
-          Try Stillwave Free
-        </button>
+        {/* TRY STILLWAVE FREE */}
+        <Link
+          to="/pricing"
+          className="
+            h-[58px]
+            px-10
+            rounded-full
+            bg-white
+            text-[#123B72]
+            text-[18px]
+            font-[600]
+            flex
+            items-center
+            justify-center
+            hover:scale-[1.02]
+            transition-all
+            duration-300
+          "
+        >
+          Try Stillwave For Free
+        </Link>
+
       </div>
     </div>
   );

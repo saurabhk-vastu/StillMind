@@ -13,6 +13,7 @@ import focus from "@/assets/card-focus.jpg";
 import emo from "@/assets/card-emotional.jpg";
 import med from "@/assets/card-meditation.jpg";
 
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [

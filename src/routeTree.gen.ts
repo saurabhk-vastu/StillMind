@@ -14,10 +14,25 @@ import { Route as SleepRouteImport } from './routes/sleep'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SigninRouteImport } from './routes/signin'
 import { Route as ScreeningRouteImport } from './routes/screening'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as MobileAppRouteImport } from './routes/mobile-app'
 import { Route as MindfulnessRouteImport } from './routes/mindfulness'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardWorkRouteImport } from './routes/dashboard.work'
+import { Route as DashboardWisdomRouteImport } from './routes/dashboard.wisdom'
+import { Route as DashboardSubscriptionRouteImport } from './routes/dashboard.subscription'
+import { Route as DashboardSleepRouteImport } from './routes/dashboard.sleep'
+import { Route as DashboardMyStatsRouteImport } from './routes/dashboard.my-stats'
+import { Route as DashboardMusicRouteImport } from './routes/dashboard.music'
+import { Route as DashboardMovementRouteImport } from './routes/dashboard.movement'
+import { Route as DashboardMeditateRouteImport } from './routes/dashboard.meditate'
+import { Route as DashboardLanguageRouteImport } from './routes/dashboard.language'
+import { Route as DashboardKidsRouteImport } from './routes/dashboard.kids'
+import { Route as DashboardHomeRouteImport } from './routes/dashboard.home'
+import { Route as DashboardChangePasswordRouteImport } from './routes/dashboard.change-password'
+import { Route as DashboardAccountSettingsRouteImport } from './routes/dashboard.account-settings'
 
 const StressRoute = StressRouteImport.update({
   id: '/stress',
@@ -44,9 +59,19 @@ const ScreeningRoute = ScreeningRouteImport.update({
   path: '/screening',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MobileAppRoute = MobileAppRouteImport.update({
+  id: '/mobile-app',
+  path: '/mobile-app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MindfulnessRoute = MindfulnessRouteImport.update({
@@ -64,40 +89,151 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardWorkRoute = DashboardWorkRouteImport.update({
+  id: '/work',
+  path: '/work',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardWisdomRoute = DashboardWisdomRouteImport.update({
+  id: '/wisdom',
+  path: '/wisdom',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardSubscriptionRoute = DashboardSubscriptionRouteImport.update({
+  id: '/subscription',
+  path: '/subscription',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardSleepRoute = DashboardSleepRouteImport.update({
+  id: '/sleep',
+  path: '/sleep',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardMyStatsRoute = DashboardMyStatsRouteImport.update({
+  id: '/my-stats',
+  path: '/my-stats',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardMusicRoute = DashboardMusicRouteImport.update({
+  id: '/music',
+  path: '/music',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardMovementRoute = DashboardMovementRouteImport.update({
+  id: '/movement',
+  path: '/movement',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardMeditateRoute = DashboardMeditateRouteImport.update({
+  id: '/meditate',
+  path: '/meditate',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardLanguageRoute = DashboardLanguageRouteImport.update({
+  id: '/language',
+  path: '/language',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardKidsRoute = DashboardKidsRouteImport.update({
+  id: '/kids',
+  path: '/kids',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardHomeRoute = DashboardHomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardChangePasswordRoute = DashboardChangePasswordRouteImport.update({
+  id: '/change-password',
+  path: '/change-password',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAccountSettingsRoute =
+  DashboardAccountSettingsRouteImport.update({
+    id: '/account-settings',
+    path: '/account-settings',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/mindfulness': typeof MindfulnessRoute
+  '/mobile-app': typeof MobileAppRoute
   '/onboarding': typeof OnboardingRoute
+  '/pricing': typeof PricingRoute
   '/screening': typeof ScreeningRoute
   '/signin': typeof SigninRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sleep': typeof SleepRoute
   '/stress': typeof StressRoute
+  '/dashboard/account-settings': typeof DashboardAccountSettingsRoute
+  '/dashboard/change-password': typeof DashboardChangePasswordRoute
+  '/dashboard/home': typeof DashboardHomeRoute
+  '/dashboard/kids': typeof DashboardKidsRoute
+  '/dashboard/language': typeof DashboardLanguageRoute
+  '/dashboard/meditate': typeof DashboardMeditateRoute
+  '/dashboard/movement': typeof DashboardMovementRoute
+  '/dashboard/music': typeof DashboardMusicRoute
+  '/dashboard/my-stats': typeof DashboardMyStatsRoute
+  '/dashboard/sleep': typeof DashboardSleepRoute
+  '/dashboard/subscription': typeof DashboardSubscriptionRoute
+  '/dashboard/wisdom': typeof DashboardWisdomRoute
+  '/dashboard/work': typeof DashboardWorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/mindfulness': typeof MindfulnessRoute
+  '/mobile-app': typeof MobileAppRoute
   '/onboarding': typeof OnboardingRoute
+  '/pricing': typeof PricingRoute
   '/screening': typeof ScreeningRoute
   '/signin': typeof SigninRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sleep': typeof SleepRoute
   '/stress': typeof StressRoute
+  '/dashboard/account-settings': typeof DashboardAccountSettingsRoute
+  '/dashboard/change-password': typeof DashboardChangePasswordRoute
+  '/dashboard/home': typeof DashboardHomeRoute
+  '/dashboard/kids': typeof DashboardKidsRoute
+  '/dashboard/language': typeof DashboardLanguageRoute
+  '/dashboard/meditate': typeof DashboardMeditateRoute
+  '/dashboard/movement': typeof DashboardMovementRoute
+  '/dashboard/music': typeof DashboardMusicRoute
+  '/dashboard/my-stats': typeof DashboardMyStatsRoute
+  '/dashboard/sleep': typeof DashboardSleepRoute
+  '/dashboard/subscription': typeof DashboardSubscriptionRoute
+  '/dashboard/wisdom': typeof DashboardWisdomRoute
+  '/dashboard/work': typeof DashboardWorkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/mindfulness': typeof MindfulnessRoute
+  '/mobile-app': typeof MobileAppRoute
   '/onboarding': typeof OnboardingRoute
+  '/pricing': typeof PricingRoute
   '/screening': typeof ScreeningRoute
   '/signin': typeof SigninRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sleep': typeof SleepRoute
   '/stress': typeof StressRoute
+  '/dashboard/account-settings': typeof DashboardAccountSettingsRoute
+  '/dashboard/change-password': typeof DashboardChangePasswordRoute
+  '/dashboard/home': typeof DashboardHomeRoute
+  '/dashboard/kids': typeof DashboardKidsRoute
+  '/dashboard/language': typeof DashboardLanguageRoute
+  '/dashboard/meditate': typeof DashboardMeditateRoute
+  '/dashboard/movement': typeof DashboardMovementRoute
+  '/dashboard/music': typeof DashboardMusicRoute
+  '/dashboard/my-stats': typeof DashboardMyStatsRoute
+  '/dashboard/sleep': typeof DashboardSleepRoute
+  '/dashboard/subscription': typeof DashboardSubscriptionRoute
+  '/dashboard/wisdom': typeof DashboardWisdomRoute
+  '/dashboard/work': typeof DashboardWorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -105,41 +241,88 @@ export interface FileRouteTypes {
     | '/'
     | '/dashboard'
     | '/mindfulness'
+    | '/mobile-app'
     | '/onboarding'
+    | '/pricing'
     | '/screening'
     | '/signin'
     | '/sitemap.xml'
     | '/sleep'
     | '/stress'
+    | '/dashboard/account-settings'
+    | '/dashboard/change-password'
+    | '/dashboard/home'
+    | '/dashboard/kids'
+    | '/dashboard/language'
+    | '/dashboard/meditate'
+    | '/dashboard/movement'
+    | '/dashboard/music'
+    | '/dashboard/my-stats'
+    | '/dashboard/sleep'
+    | '/dashboard/subscription'
+    | '/dashboard/wisdom'
+    | '/dashboard/work'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/dashboard'
     | '/mindfulness'
+    | '/mobile-app'
     | '/onboarding'
+    | '/pricing'
     | '/screening'
     | '/signin'
     | '/sitemap.xml'
     | '/sleep'
     | '/stress'
+    | '/dashboard/account-settings'
+    | '/dashboard/change-password'
+    | '/dashboard/home'
+    | '/dashboard/kids'
+    | '/dashboard/language'
+    | '/dashboard/meditate'
+    | '/dashboard/movement'
+    | '/dashboard/music'
+    | '/dashboard/my-stats'
+    | '/dashboard/sleep'
+    | '/dashboard/subscription'
+    | '/dashboard/wisdom'
+    | '/dashboard/work'
   id:
     | '__root__'
     | '/'
     | '/dashboard'
     | '/mindfulness'
+    | '/mobile-app'
     | '/onboarding'
+    | '/pricing'
     | '/screening'
     | '/signin'
     | '/sitemap.xml'
     | '/sleep'
     | '/stress'
+    | '/dashboard/account-settings'
+    | '/dashboard/change-password'
+    | '/dashboard/home'
+    | '/dashboard/kids'
+    | '/dashboard/language'
+    | '/dashboard/meditate'
+    | '/dashboard/movement'
+    | '/dashboard/music'
+    | '/dashboard/my-stats'
+    | '/dashboard/sleep'
+    | '/dashboard/subscription'
+    | '/dashboard/wisdom'
+    | '/dashboard/work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DashboardRoute: typeof DashboardRoute
+  DashboardRoute: typeof DashboardRouteWithChildren
   MindfulnessRoute: typeof MindfulnessRoute
+  MobileAppRoute: typeof MobileAppRoute
   OnboardingRoute: typeof OnboardingRoute
+  PricingRoute: typeof PricingRoute
   ScreeningRoute: typeof ScreeningRoute
   SigninRoute: typeof SigninRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -184,11 +367,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScreeningRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mobile-app': {
+      id: '/mobile-app'
+      path: '/mobile-app'
+      fullPath: '/mobile-app'
+      preLoaderRoute: typeof MobileAppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mindfulness': {
@@ -212,14 +409,143 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard/work': {
+      id: '/dashboard/work'
+      path: '/work'
+      fullPath: '/dashboard/work'
+      preLoaderRoute: typeof DashboardWorkRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/wisdom': {
+      id: '/dashboard/wisdom'
+      path: '/wisdom'
+      fullPath: '/dashboard/wisdom'
+      preLoaderRoute: typeof DashboardWisdomRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/subscription': {
+      id: '/dashboard/subscription'
+      path: '/subscription'
+      fullPath: '/dashboard/subscription'
+      preLoaderRoute: typeof DashboardSubscriptionRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/sleep': {
+      id: '/dashboard/sleep'
+      path: '/sleep'
+      fullPath: '/dashboard/sleep'
+      preLoaderRoute: typeof DashboardSleepRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/my-stats': {
+      id: '/dashboard/my-stats'
+      path: '/my-stats'
+      fullPath: '/dashboard/my-stats'
+      preLoaderRoute: typeof DashboardMyStatsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/music': {
+      id: '/dashboard/music'
+      path: '/music'
+      fullPath: '/dashboard/music'
+      preLoaderRoute: typeof DashboardMusicRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/movement': {
+      id: '/dashboard/movement'
+      path: '/movement'
+      fullPath: '/dashboard/movement'
+      preLoaderRoute: typeof DashboardMovementRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/meditate': {
+      id: '/dashboard/meditate'
+      path: '/meditate'
+      fullPath: '/dashboard/meditate'
+      preLoaderRoute: typeof DashboardMeditateRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/language': {
+      id: '/dashboard/language'
+      path: '/language'
+      fullPath: '/dashboard/language'
+      preLoaderRoute: typeof DashboardLanguageRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/kids': {
+      id: '/dashboard/kids'
+      path: '/kids'
+      fullPath: '/dashboard/kids'
+      preLoaderRoute: typeof DashboardKidsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/home': {
+      id: '/dashboard/home'
+      path: '/home'
+      fullPath: '/dashboard/home'
+      preLoaderRoute: typeof DashboardHomeRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/change-password': {
+      id: '/dashboard/change-password'
+      path: '/change-password'
+      fullPath: '/dashboard/change-password'
+      preLoaderRoute: typeof DashboardChangePasswordRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/account-settings': {
+      id: '/dashboard/account-settings'
+      path: '/account-settings'
+      fullPath: '/dashboard/account-settings'
+      preLoaderRoute: typeof DashboardAccountSettingsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
   }
 }
 
+interface DashboardRouteChildren {
+  DashboardAccountSettingsRoute: typeof DashboardAccountSettingsRoute
+  DashboardChangePasswordRoute: typeof DashboardChangePasswordRoute
+  DashboardHomeRoute: typeof DashboardHomeRoute
+  DashboardKidsRoute: typeof DashboardKidsRoute
+  DashboardLanguageRoute: typeof DashboardLanguageRoute
+  DashboardMeditateRoute: typeof DashboardMeditateRoute
+  DashboardMovementRoute: typeof DashboardMovementRoute
+  DashboardMusicRoute: typeof DashboardMusicRoute
+  DashboardMyStatsRoute: typeof DashboardMyStatsRoute
+  DashboardSleepRoute: typeof DashboardSleepRoute
+  DashboardSubscriptionRoute: typeof DashboardSubscriptionRoute
+  DashboardWisdomRoute: typeof DashboardWisdomRoute
+  DashboardWorkRoute: typeof DashboardWorkRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardAccountSettingsRoute: DashboardAccountSettingsRoute,
+  DashboardChangePasswordRoute: DashboardChangePasswordRoute,
+  DashboardHomeRoute: DashboardHomeRoute,
+  DashboardKidsRoute: DashboardKidsRoute,
+  DashboardLanguageRoute: DashboardLanguageRoute,
+  DashboardMeditateRoute: DashboardMeditateRoute,
+  DashboardMovementRoute: DashboardMovementRoute,
+  DashboardMusicRoute: DashboardMusicRoute,
+  DashboardMyStatsRoute: DashboardMyStatsRoute,
+  DashboardSleepRoute: DashboardSleepRoute,
+  DashboardSubscriptionRoute: DashboardSubscriptionRoute,
+  DashboardWisdomRoute: DashboardWisdomRoute,
+  DashboardWorkRoute: DashboardWorkRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DashboardRoute: DashboardRoute,
+  DashboardRoute: DashboardRouteWithChildren,
   MindfulnessRoute: MindfulnessRoute,
+  MobileAppRoute: MobileAppRoute,
   OnboardingRoute: OnboardingRoute,
+  PricingRoute: PricingRoute,
   ScreeningRoute: ScreeningRoute,
   SigninRoute: SigninRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
