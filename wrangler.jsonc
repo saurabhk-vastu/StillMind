@@ -5,8 +5,11 @@
 
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
-  
-  "assets": {
-    "directory": "dist/client"
+
+  // SSR worker — without this, deploy uploads only static files and every route 404s.
+  "main": "src/server.ts",
+
+  "observability": {
+    "enabled": true
   }
 }
